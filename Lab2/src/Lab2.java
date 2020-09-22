@@ -1,5 +1,14 @@
 import java.io.IOException;
 
+/**
+ * Test class for logic/implementation. Loads zone and students into the School object.
+ * Moves a student to a new zone and reflects that change in students.csv
+ * @author Madeline Kotara - duk128
+ * @version 2.0
+ * @since 9-15-2020
+ *
+ */
+
 public class Lab2 {
 	
 	public static void main(String[] args) {
@@ -14,8 +23,6 @@ public class Lab2 {
 			System.out.println(m);
 			
 			m.relocate("Blue", "TY");
-			m.relocate("Echo", "TY");
-			//m.relocate("Trudy", "R");
 			m.save();
 			
 			System.out.println(m);
