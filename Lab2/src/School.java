@@ -1,6 +1,10 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +23,7 @@ public class School {
 	private String schoolName;
 	private List<Zone> zones = new ArrayList<Zone>();
 	private Student temp = new Student();
+	private final String DELIMITER = ",";
 
 	
 	//constructor with REQUIRED fields, creates an array with the integer passed to the object, as that size
@@ -114,12 +119,28 @@ public class School {
 	}
 	
 	/**
-	 * 
+	 * Deletes the original students.csv and creates a new students.csv with updated zone codes for each student
+	 * @throws IOException throws an exception if the file cannot be deleted or written
 	 */
-	public void save() {
-		
-		//TODO
-		
+	public void save() throws IOException {
+
+		try {
+			Files.deleteIfExists(Paths.get("data/students.csv"));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		BufferedWriter bw = new BufferedWriter(new FileWriter("data/students.csv", true));
+		for(int zCounter = 0; zCounter < zones.size(); zCounter++) {
+			for(int sCounter = 0; sCounter < zones.get(zCounter).getStudents().size(); sCounter++) {
+				bw.write(zones.get(zCounter).getStudents().get(sCounter).getName() + DELIMITER);
+				bw.write(zones.get(zCounter).getStudents().get(sCounter).getLevel() + DELIMITER);
+				bw.write(String.valueOf(zones.get(zCounter).getStudents().get(sCounter).isVegetarian()) + DELIMITER);
+				bw.write(zones.get(zCounter).getStudents().get(sCounter).getZoneCode() + DELIMITER);
+				bw.newLine();
+				bw.flush();
+			}
+		}
+		bw.close();
 	}
 	
 	/**
