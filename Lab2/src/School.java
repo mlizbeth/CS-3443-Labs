@@ -135,7 +135,7 @@ public class School {
 				bw.write(zones.get(zCounter).getStudents().get(sCounter).getName() + DELIMITER);
 				bw.write(zones.get(zCounter).getStudents().get(sCounter).getLevel() + DELIMITER);
 				bw.write(String.valueOf(zones.get(zCounter).getStudents().get(sCounter).isVegetarian()) + DELIMITER);
-				bw.write(zones.get(zCounter).getStudents().get(sCounter).getZoneCode() + DELIMITER);
+				bw.write(zones.get(zCounter).getStudents().get(sCounter).getZoneCode());
 				bw.newLine();
 				bw.flush();
 			}
