@@ -134,7 +134,7 @@ public class School {
 			for(int sCounter = 0; sCounter < zones.get(zCounter).getStudents().size(); sCounter++) {
 				bw.write(zones.get(zCounter).getStudents().get(sCounter).getName() + DELIMITER);
 				bw.write(zones.get(zCounter).getStudents().get(sCounter).getLevel() + DELIMITER);
-				bw.write(String.valueOf(zones.get(zCounter).getStudents().get(sCounter).isVegetarian()) + DELIMITER);
+				bw.write(String.valueOf(zones.get(zCounter).getStudents().get(sCounter).isVegetarian()).toUpperCase() + DELIMITER);
 				bw.write(zones.get(zCounter).getStudents().get(sCounter).getZoneCode());
 				bw.newLine();
 				bw.flush();
