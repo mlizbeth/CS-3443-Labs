@@ -9,6 +9,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Main class responsible for creating and running the JavaFX Application
+ * 
+ * @author Madeline Kotara - duk128
+ * @version 1.0
+ * @since 10-15-2020
+ *
+ */
 
 public class Main extends Application {
 	@Override

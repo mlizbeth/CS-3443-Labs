@@ -9,6 +9,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+/**
+ * Handles the events that are initiated by the botton press in the GUI
+ * 
+ * @author Madeline Kotara - duk128
+ * @version 1.0
+ * @since 10-15-2020
+ *
+ */
+
 public class MainController implements EventHandler<ActionEvent> {
 	
 	@FXML
@@ -17,7 +26,7 @@ public class MainController implements EventHandler<ActionEvent> {
 	private TextField textField;
 	@FXML
 	private TextArea textArea;
-
+	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -28,7 +37,15 @@ public class MainController implements EventHandler<ActionEvent> {
 					temp2 += temp.getShips().get(x).toString() + "\n";
 				}
 			}
-			textArea.setText(temp2);
+			if(textField.getText().equals("")) {
+				textArea.setText("");
+			}
+			else {
+				textArea.setText(temp2);
+			}
+			
+			//System.out.println(temp.toString());
+			
 		} catch (IOException e) {e.printStackTrace();}
 	}
 }
