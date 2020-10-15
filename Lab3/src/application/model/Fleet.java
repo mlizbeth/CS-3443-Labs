@@ -18,7 +18,7 @@ public class Fleet {
 		loadCrew("data/personnel.csv");
 	}
 	
-	public void loadCrew(String path) throws IOException {
+	private void loadCrew(String path) throws IOException {
 		String line = "";
 		BufferedReader reader = new BufferedReader(new FileReader(path));
 		while((line = reader.readLine()) != null) {
@@ -31,13 +31,9 @@ public class Fleet {
 			}
 		}
 		reader.close();
-		
-//		for(Starship x : ships) {
-//			System.out.println(x.toString());
-//		}
 	}
 		
-	public void loadShips(String path) throws IOException {
+	private void loadShips(String path) throws IOException {
 		String line = "";
 		BufferedReader reader = new BufferedReader(new FileReader(path));
 		while((line = reader.readLine()) != null) {
@@ -47,11 +43,34 @@ public class Fleet {
 			
 		reader.close();
 	}
+	
+	public static Fleet loadData() throws IOException {
+		return new Fleet("United Federation of Planets");
+	}
+	
+	public String getName() {
+		return name;
+	}
 
-	
-	/*
-	 * TODO
-	 * getStarshipByName();
-	 */
-	
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Starship> getShips() {
+		return ships;
+	}
+
+	public void setShips(List<Starship> ships) {
+		this.ships = ships;
+	}
+
+	public List<Starship> getStarshipsByName(String shipName) {
+		List<Starship> temp = new ArrayList<Starship>();
+		for(Starship ship : ships) {
+			if(ship.getName().contains(shipName)) {
+				temp.add(ship);
+			}
+		}
+		return temp;
+	}
 }

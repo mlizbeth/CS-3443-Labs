@@ -22,8 +22,6 @@ public class Main extends Application {
 		primaryStage.setResizable(false);
 		primaryStage.show();
 
-		
-		Fleet f = new Fleet("Cook-ers");
 	}
 	
 	public static void main(String[] args) {
