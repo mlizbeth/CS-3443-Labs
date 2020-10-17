@@ -135,6 +135,10 @@ public class Fleet {
 	}
 	
 	public String toString() {
-		return ships.toString();
+		String temp = "";
+		for(Starship starship : ships) {
+			temp += starship.toString();
+		}
+		return temp;
 	}
 }
