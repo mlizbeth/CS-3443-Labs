@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <cursor>
       <Cursor fx:constant="CROSSHAIR" />
    </cursor>
+   <children>
+      <Label layoutX="324.0" layoutY="47.0" text="Starfleet Personnel" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="37.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/space.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="58.0" layoutY="211.0" text="Enter your username:" />
+      <Label layoutX="88.0" layoutY="259.0" text="Passphrase" />
+      <Button layoutX="237.0" layoutY="321.0" mnemonicParsing="false" text="Log In" />
+      <TextField layoutX="264.0" layoutY="205.0" />
+      <TextField layoutX="264.0" layoutY="253.0" />
+   </children>
 </AnchorPane>
