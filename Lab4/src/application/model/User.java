@@ -1,5 +1,9 @@
 package application.model;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class User {
 
 	private String username, password;
@@ -10,8 +14,22 @@ public class User {
 	}
 	
 	//TODO
-	public static void validate(String username, String password) {
-		return;
+	public static User validate(String username, String password) throws IOException {
+		String line = "";
+		User temp;
+		BufferedReader reader = new BufferedReader(new FileReader("data/users.csv"));
+		while((line = reader.readLine()) != null) {
+			String[] data = line.split(",");
+			if(data[0].equals(username)) {
+				temp = new User(data[0], data[1]);
+				if(data[1].equals(password)) {
+					reader.close();
+					return temp;
+				}
+			}
+		}
+		reader.close();
+		return null;
 	}
 
 	public String getUsername() {
