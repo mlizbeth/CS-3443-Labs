@@ -50,6 +50,7 @@ public class Starship {
 		crewMembers.add(crewmember);
 	}
 	
+	
 	public String toString() {
 		String temp = name + " " + "[" + registry + "]" + ", " + "Class: " + classification + ", " + "Crew: " + crewMembers.size() + "\n";
 		for(CrewMember x : crewMembers) {

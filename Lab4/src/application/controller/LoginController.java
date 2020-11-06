@@ -1,54 +1,44 @@
 package application.controller;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import application.model.User;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginController implements EventHandler<ActionEvent> {
-
-	private List<User> users = new ArrayList<User>();
-	private final String SPLIT = ",";
+	
+	protected static User loggedInUser;
 	@FXML
 	private Button loginButton;
 	@FXML
 	private TextField usernameField;
 	@FXML
-	private TextField passwordField;
+	private PasswordField passwordField;
+		
 	
-	/*
-	 * TODO
-	 * On login, validate username and password by reading users.csv, if valid, proceed to the next view.
-	 * GUI Stuff
-	 * password mask
-	 */
-	
+	//TODO hide old stage and show new one
 	@Override
 	public void handle(ActionEvent event) {
 		try {
-			User.validate(usernameField.getText(), passwordField.getText());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+			loggedInUser = User.validate(usernameField.getText(), passwordField.getText());
+			if(loggedInUser.exists()) {
+				usernameField.setText("");
+				passwordField.setText("");
+				Stage primaryStage = new Stage();
+				Parent root = FXMLLoader.load(getClass().getResource("/Personnel.fxml"));
+				Scene scene = new Scene(root);
+				primaryStage.setScene(scene);
+				primaryStage.setResizable(false);
+				primaryStage.show();
+			}
+		} catch (IOException e) { e.printStackTrace(); }
 	}
-	
-	private void loadUsers(String path) throws IOException {
-		String line = "";
-		BufferedReader reader = new BufferedReader(new FileReader(path));
-		while((line = reader.readLine()) != null) {
-			String[] data = line.split(SPLIT);
-			users.add(new User(data[0], data[1]));
-		}
-		reader.close();
-	}
-
 }
