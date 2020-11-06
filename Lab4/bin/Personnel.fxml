@@ -8,19 +8,19 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PersonnelController">
    <children>
-      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="37.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="43.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/chapel.jpg" />
          </image></ImageView>
-      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="182.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="189.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/chakotay.jpg" />
          </image></ImageView>
-      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="319.0" layoutY="242.0" pickOnBounds="true">
+      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="319.0" layoutY="201.0" pickOnBounds="true">
          <image>
             <Image url="@../img/chekov.jpg" />
          </image></ImageView>
-      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="475.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="467.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/crusher.jpg" />
          </image></ImageView>
@@ -35,5 +35,9 @@
          </image>
       </ImageView>
       <Label fx:id="shipLabel" layoutX="287.0" layoutY="68.0" prefHeight="27.0" prefWidth="152.0" />
+      <Label layoutX="67.0" layoutY="330.0" text="Label" />
+      <Label layoutX="206.0" layoutY="330.0" text="Label" />
+      <Label layoutX="342.0" layoutY="330.0" text="Label" />
+      <Label layoutX="483.0" layoutY="330.0" text="Label" />
    </children>
 </AnchorPane>
