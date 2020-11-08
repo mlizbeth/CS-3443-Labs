@@ -1,6 +1,5 @@
 package application.controller;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +20,6 @@ public class PersonnelController implements EventHandler<ActionEvent>{
 	private Fleet fleet;
 	private User currentUser = LoginController.loggedInUser;
 	private List<CrewMember> crew = new ArrayList<CrewMember>();
-	private List<String> order = new ArrayList<String>();
 	private int shipIndex;
 	private int userIndex;
 	private String ship = "";
