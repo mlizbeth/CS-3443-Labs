@@ -29,6 +29,8 @@ public class PersonnelController implements EventHandler<ActionEvent>{
 	private Label nameLabel;
 	@FXML
 	private Label shipLabel;
+	@FXML 
+	private Label imgLabel1, imgLabel2, imgLabel3, imgLabel4, imgLabel5, imgLabel6, imgLabel7, imgLabel8;
 	
 	@Override
 	public void handle(ActionEvent event) {
@@ -62,13 +64,15 @@ public class PersonnelController implements EventHandler<ActionEvent>{
 		if(!(crew.size() <= 0)) {
 			nameLabel.setText(nameLabel.getText() + crew.get(userIndex).getRank() + " " + crew.get(userIndex).getName().substring(crew.get(userIndex).getName().lastIndexOf(" ") +1));
 			shipLabel.setText(ship + " " + registry);
+			
+			for(CrewMember c : crew) {
+				System.out.println(c.toString());
+			}
+			
+			
+		}
+		else {
+			nameLabel.setText("You are not assigned to a ship.");
 		}
 	}
-	
-	/*
-	 * TODO
-	 * Load all the crewmembers that belong to the captain that is logging in.
-	 * GUI Stuff
-	 */
-
 }
