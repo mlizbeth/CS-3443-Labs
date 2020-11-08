@@ -87,6 +87,10 @@ public class PersonnelController implements EventHandler<ActionEvent>{
 					img3.setImage(new Image(c.getPicture().toURI().toString()));
 					imgLabel3.setText(c.getPosition() + "\n" + c.getRank() + " " + c.getName());
 					break;
+				case "Counselor":
+					img3.setImage(new Image(c.getPicture().toURI().toString()));
+					imgLabel3.setText(c.getPosition() + "\n" + c.getRank() + " " + c.getName());
+					break;
 				case "Chief Engineering Officer":
 					img4.setImage(new Image(c.getPicture().toURI().toString()));
 					imgLabel4.setText(c.getPosition() + "\n" + c.getRank() + " " + c.getName());
@@ -94,6 +98,10 @@ public class PersonnelController implements EventHandler<ActionEvent>{
 				case "Helmsman":
 					img5.setImage(new Image(c.getPicture().toURI().toString()));
 					imgLabel5.setText(c.getPosition() + "\n" + c.getRank() + " " + c.getName());
+					break;
+				case "Chief Operations Officer": 
+					img6.setImage(new Image(c.getPicture().toURI().toString()));
+					imgLabel6.setText(c.getPosition() + "\n" + c.getRank() + " " + c.getName());
 					break;
 				case "Navigator":
 					img6.setImage(new Image(c.getPicture().toURI().toString()));
@@ -104,6 +112,10 @@ public class PersonnelController implements EventHandler<ActionEvent>{
 					imgLabel7.setText(c.getPosition() + "\n" + c.getRank() + " " + c.getName());
 					break;
 				case "Nurse":
+					img8.setImage(new Image(c.getPicture().toURI().toString()));
+					imgLabel8.setText(c.getPosition() + "\n" + c.getRank() + " " + c.getName());
+					break;
+				case "Chief Security Officer":
 					img8.setImage(new Image(c.getPicture().toURI().toString()));
 					imgLabel8.setText(c.getPosition() + "\n" + c.getRank() + " " + c.getName());
 					break;
