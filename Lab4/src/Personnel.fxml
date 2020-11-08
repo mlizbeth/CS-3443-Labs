@@ -6,24 +6,12 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PersonnelController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PersonnelController">
    <children>
-      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="43.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/chapel.jpg" />
-         </image></ImageView>
-      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="189.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/chakotay.jpg" />
-         </image></ImageView>
-      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="319.0" layoutY="201.0" pickOnBounds="true">
-         <image>
-            <Image url="@../img/chekov.jpg" />
-         </image></ImageView>
-      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="467.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/crusher.jpg" />
-         </image></ImageView>
+      <ImageView fx:id="img1" fitHeight="120.0" fitWidth="89.0" layoutX="62.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img2" fitHeight="120.0" fitWidth="89.0" layoutX="248.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img3" fitHeight="120.0" fitWidth="89.0" layoutX="439.0" layoutY="201.0" pickOnBounds="true" />
+      <ImageView fx:id="img4" fitHeight="120.0" fitWidth="89.0" layoutX="634.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="logoutButton" layoutX="504.0" layoutY="14.0" mnemonicParsing="false" onAction="#handle" text="Log Out" />
       <Label fx:id="nameLabel" layoutX="241.0" layoutY="38.0" text="Welcome, ">
          <font>
@@ -34,40 +22,42 @@
             <Image url="@../img/space.png" />
          </image>
       </ImageView>
-      <Label fx:id="shipLabel" layoutX="248.0" layoutY="76.0" prefHeight="27.0" prefWidth="152.0" />
-      <Label fx:id="imgLabel1" layoutX="29.0" layoutY="322.0">
+      <Label fx:id="shipLabel" layoutX="248.0" layoutY="76.0" prefHeight="27.0" prefWidth="190.0" />
+      <Label fx:id="imgLabel1" layoutX="62.0" layoutY="335.0" prefWidth="100.0" wrapText="true">
          <font>
-            <Font size="12.0" />
+            <Font size="10.0" />
          </font></Label>
-      <Label fx:id="imgLabel2" layoutX="189.0" layoutY="322.0">
+      <Label fx:id="imgLabel2" layoutX="248.0" layoutY="335.0" prefWidth="100.0" wrapText="true">
          <font>
-            <Font size="12.0" />
+            <Font size="10.0" />
          </font></Label>
-      <Label fx:id="imgLabel3" layoutX="342.0" layoutY="330.0" />
-      <Label fx:id="imgLabel4" layoutX="483.0" layoutY="330.0" />
-      <ImageView fitHeight="108.0" fitWidth="89.0" layoutX="52.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/data.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="120.0" fitWidth="89.0" layoutX="182.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/janeway.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="120.0" fitWidth="89.0" layoutX="319.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/kes.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="120.0" fitWidth="89.0" layoutX="460.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/kirk.jpg" />
-         </image>
-      </ImageView>
-      <Label fx:id="imgLabel5" layoutX="67.0" layoutY="534.0" />
-      <Label fx:id="imgLabel6" layoutX="206.0" layoutY="534.0" />
-      <Label fx:id="imgLabel7" layoutX="343.0" layoutY="534.0" />
-      <Label fx:id="imgLabel8" layoutX="483.0" layoutY="534.0" />
+      <Label fx:id="imgLabel3" layoutX="439.0" layoutY="335.0" prefWidth="100.0" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+      <Label fx:id="imgLabel4" layoutX="634.0" layoutY="335.0" prefWidth="100.0" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+      <ImageView fx:id="img5" fitHeight="120.0" fitWidth="89.0" layoutX="62.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img6" fitHeight="120.0" fitWidth="89.0" layoutX="248.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img7" fitHeight="120.0" fitWidth="89.0" layoutX="441.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img8" fitHeight="120.0" fitWidth="89.0" layoutX="634.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="imgLabel5" layoutX="62.0" layoutY="533.0" prefWidth="100.0" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+      <Label fx:id="imgLabel6" layoutX="248.0" layoutY="533.0" prefWidth="100.0" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+      <Label fx:id="imgLabel7" layoutX="439.0" layoutY="533.0" prefWidth="100.0" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+      <Label fx:id="imgLabel8" layoutX="634.0" layoutY="533.0" prefWidth="100.0" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
    </children>
 </AnchorPane>

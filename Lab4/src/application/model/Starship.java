@@ -7,6 +7,7 @@ public class Starship {
 	
 	private String name, registry, classification;
 	private List<CrewMember> crewMembers = new ArrayList<CrewMember>();
+	private List<CrewMember> sortedCrew = new ArrayList<CrewMember>();
 	
 	public Starship(String name, String registry, String classification) {
 		this.name = name;
@@ -49,7 +50,6 @@ public class Starship {
 	public void addCrewMember(CrewMember crewmember) {
 		crewMembers.add(crewmember);
 	}
-	
 	
 	public String toString() {
 		String temp = name + " " + "[" + registry + "]" + ", " + "Class: " + classification + ", " + "Crew: " + crewMembers.size() + "\n";

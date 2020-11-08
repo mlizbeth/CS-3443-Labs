@@ -1,6 +1,7 @@
 package application.model;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,6 +21,9 @@ public class Fleet {
 	private String name;
 	private List<Starship> ships = new ArrayList<Starship>();
 	private final String SPLIT = ",";
+	private final File IMG_DIR = new File("img");
+	private List<String> pictures = new ArrayList<String>();
+	
 	
 	/**
 	 * 
@@ -31,7 +35,33 @@ public class Fleet {
 		this.name = name;
 		loadShips("data/fleet.csv");
 		loadCrew("data/personnel.csv");
+		loadImgPath(IMG_DIR);
+		assignImage();
 	}
+	
+	private void assignImage() {
+		for(int x = 0; x < ships.size(); x++) {
+			for(int y = 0; y < ships.get(x).getCrewMembers().size(); y++) {
+				for(String p : pictures) {
+					if(p.substring(p.indexOf("/") + 1, p.indexOf(".")).contains(ships.get(x).getCrewMembers().get(y).getLastName().toLowerCase())) {
+						//ships.get(x).getCrewMembers().get(y).setPicturePath(p);
+						ships.get(x).getCrewMembers().get(y).setPicture(new File(p));
+					}
+				}
+			}
+		}
+	}
+	
+	
+	private void loadImgPath(final File IMG_DIR) {
+	    for (final File fileEntry : IMG_DIR.listFiles()) {
+	        if (!(fileEntry.isDirectory())) {
+	           pictures.add(fileEntry.getPath());
+	        } 
+	    }
+	}
+	
+
 	
 	/**
 	 * Reads personnel.csv and creates CrewMembers based on the data in the file

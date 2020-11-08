@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -22,6 +23,8 @@ public class LoginController implements EventHandler<ActionEvent> {
 	private TextField usernameField;
 	@FXML
 	private PasswordField passwordField;
+	@FXML
+	private Label invalid;
 		
 	
 	//TODO hide old stage and show new one
@@ -30,6 +33,7 @@ public class LoginController implements EventHandler<ActionEvent> {
 		try {
 			loggedInUser = User.validate(usernameField.getText(), passwordField.getText());
 			if(loggedInUser.exists()) {
+				invalid.setText("");
 				usernameField.setText("");
 				passwordField.setText("");
 				Stage primaryStage = new Stage();
@@ -38,6 +42,10 @@ public class LoginController implements EventHandler<ActionEvent> {
 				primaryStage.setScene(scene);
 				primaryStage.setResizable(false);
 				primaryStage.show();
+			}
+			else {
+				invalid.setText("Invalid username or password");
+				passwordField.setText("");
 			}
 		} catch (IOException e) { e.printStackTrace(); }
 	}

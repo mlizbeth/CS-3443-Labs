@@ -1,15 +1,31 @@
 package application.model;
 
+import java.io.File;
+
 public class CrewMember {
 	
 	private String name, position, rank, species, currentShip;
+	private File picture;
 	
+
 	public CrewMember(String name, String position, String rank, String currentShip, String species) {
 		this.name = name;
 		this.position = position;
 		this.rank = rank;
 		this.currentShip = currentShip;
 		this.species = species;
+	}
+	
+	public String getLastName() {
+		return name.substring(name.lastIndexOf(" ") + 1);
+	}
+	
+	public File getPicture() {
+		return picture;
+	}
+
+	public void setPicture(File picture) {
+		this.picture = picture;
 	}
 	
 	public String getName() {
