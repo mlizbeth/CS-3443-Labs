@@ -4,7 +4,7 @@ public class Zone {
 	
 	private String zoneName, zoneCode, threatLevel;
 	
-	public Zone(String zoneName, String zoneCode, String threatLevel) {
+	public Zone(String zoneName, String threatLevel, String zoneCode) {
 		this.zoneName = zoneName;
 		this.zoneCode = zoneCode;
 		this.threatLevel = threatLevel;
