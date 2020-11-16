@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+   <children>
+      <Label layoutX="151.0" layoutY="157.0" text="Select a zone to continue:">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="bZone" layoutX="81.0" layoutY="214.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="B">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="dZone" layoutX="193.0" layoutY="214.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="D">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="gZone" layoutX="312.0" layoutY="214.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="G">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="rZone" layoutX="436.0" layoutY="214.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="R">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="trZone" layoutX="135.0" layoutY="299.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="TR">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="tyZone" layoutX="255.0" layoutY="299.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="TY">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button layoutX="379.0" layoutY="299.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="X" fx:id="xZone">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="94.0" fitWidth="145.0" layoutX="210.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

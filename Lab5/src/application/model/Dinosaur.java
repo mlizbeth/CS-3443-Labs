@@ -3,12 +3,12 @@ package application.model;
 public class Dinosaur {
 	
 	private String name, type;
-	private boolean isCarnivorous;
+	private boolean isNotCarnivorous;
 	
-	public Dinosaur(String name, String type, boolean isCarnivorous) {
+	public Dinosaur(String name, String type, boolean isNotCarnivorous) {
 		this.name = name;
 		this.type = type;
-		this.isCarnivorous = isCarnivorous;
+		this.isNotCarnivorous = isNotCarnivorous;
 	}
 	
 	public String getName() {
@@ -27,22 +27,20 @@ public class Dinosaur {
 		this.type = type;
 	}
 
-	public boolean isCarnivorous() {
-		return isCarnivorous;
+	public boolean isNotCarnivorous() {
+		return isNotCarnivorous;
 	}
 
-	public void setCarnivorous(boolean isCarnivorous) {
-		this.isCarnivorous = isCarnivorous;
+	public void setCarnivorous(boolean isNotCarnivorous) {
+		this.isNotCarnivorous = isNotCarnivorous;
 	}
 
 	public String toString() {
-		if(isCarnivorous) {
+		if(!isNotCarnivorous) {
 			return name + " - " + type + " -" + " Carnivore ";
 		}
 		else {
 			return name + " - " + type + " -" + " Non-Carnivore ";
 		}
 	}
-	
-
 }
