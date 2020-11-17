@@ -1,11 +1,14 @@
 package application.model;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class Park {
 	
@@ -18,7 +21,6 @@ public class Park {
 	public Park(String parkName) {
 		this.parkName = parkName;
 		loadZones();
-	
 	}
 	
 	private void relocate() {
@@ -26,7 +28,24 @@ public class Park {
 	}
 	
 	private void save() {
+		try {
+			Files.delete(Paths.get(DINO_PATH));
+		} catch(IOException e) { System.out.println("Error deleting data file"); }
 		
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileWriter(DINO_PATH, true));
+			parkMap.entrySet().forEach(entity -> {
+				ArrayList<Dinosaur> temp = entity.getValue();
+				for(Dinosaur dino : temp) {
+					try {
+						writer.write(dino.getName() + "," + dino.getType() + "," + dino.isNotCarnivorous() + "," + entity.getKey().getZoneCode());
+						writer.newLine();
+						writer.flush();
+					} catch (IOException e) { System.out.println("Error writing to data file"); }
+				}
+			});		
+			writer.close();
+		} catch(IOException e) { System.out.println("Error creating data file"); }
 	}
 	
 	
