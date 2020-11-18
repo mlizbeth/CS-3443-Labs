@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ZoneController">
    <children>
@@ -31,10 +31,19 @@
          </children>
       </AnchorPane>
       <Label fx:id="relocationMessage" layoutX="459.0" layoutY="760.0" text="Hello World! (Relocate)" />
-      <Label fx:id="zoneLabel" layoutX="72.0" layoutY="47.0" text="Hello World! (Zone)" />
-      <Button fx:id="homeButton" layoutX="643.0" layoutY="41.0" mnemonicParsing="false" text="Home" />
-      <ListView layoutX="218.0" layoutY="154.0" prefHeight="304.0" prefWidth="503.0" />
-      <Label fx:id="dinoLabel" layoutX="58.0" layoutY="171.0" text="# Dinosaurs:" />
-      <Label fx:id="riskLabel" layoutX="72.0" layoutY="226.0" text="Threat Level: " />
+      <Label fx:id="zoneLabel" layoutX="45.0" layoutY="43.0" text="Hello World! (Zone)">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Button fx:id="homeButton" layoutX="643.0" layoutY="41.0" mnemonicParsing="false" onAction="#handle" text="Home" />
+      <ListView fx:id="dinoList" layoutX="242.0" layoutY="152.0" prefHeight="286.0" prefWidth="470.0" />
+      <Label fx:id="dinoLabel" layoutX="24.0" layoutY="165.0" text="# Dinosaurs:">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label fx:id="riskLabel" layoutX="24.0" layoutY="221.0" text="Threat Level: ">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
    </children>
 </AnchorPane>

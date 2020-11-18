@@ -23,11 +23,11 @@ public class Park {
 		loadZones();
 	}
 	
-	private void relocate() {
+	public void relocate(String zoneCode, String dinoName) {
 		
 	}
 	
-	private void save() {
+	public void save() {
 		try {
 			Files.delete(Paths.get(DINO_PATH));
 		} catch(IOException e) { System.out.println("Error deleting data file"); }
@@ -89,6 +89,10 @@ public class Park {
 	
 	public String getparkName() {
 		return parkName;
+	}
+	
+	public HashMap<Zone, ArrayList<Dinosaur>> getParkMap() {
+		return parkMap;
 	}
 	
 	public String toString() {
