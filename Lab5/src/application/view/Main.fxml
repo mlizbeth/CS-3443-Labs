@@ -48,7 +48,7 @@
             <Font size="30.0" />
          </font>
       </Button>
-      <ImageView fitHeight="94.0" fitWidth="145.0" layoutX="210.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="94.0" fitWidth="145.0" layoutX="240.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/logo.png" />
          </image>

@@ -28,6 +28,7 @@ public class Main extends Application {
 		primaryStage.getIcons().add(new Image("file:img/logo.png"));
 		primaryStage.show();
 		
+		
 		/* Turns out these had unintended consequences since initialization happens before
 		 * any sort of buttons are clicked
 		FXMLLoader zoneLoader = new FXMLLoader(getClass().getResource("/application/view/Zone.fxml"));

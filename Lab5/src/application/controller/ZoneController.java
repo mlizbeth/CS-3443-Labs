@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class ZoneController implements EventHandler<ActionEvent> {
@@ -23,7 +24,7 @@ public class ZoneController implements EventHandler<ActionEvent> {
 	private Stage primaryStage;
 	
 	@FXML
-	private Label carnivoreLabel, addDinoNameLabel, addDinoTypeLabel, relocationMessage, zoneLabel, dinoLabel, riskLabel, relocateNameLabel, zoneCodeLabel;
+	private Label carnivoreLabel, addDinoNameLabel, addDinoTypeLabel, relocationMessage, zoneLabel, dinoLabel, riskLabel, riskLabelText, relocateNameLabel, zoneCodeLabel;
 	@FXML
 	private Button homeButton, addButton, relocateButton;
 	@FXML
@@ -58,10 +59,24 @@ public class ZoneController implements EventHandler<ActionEvent> {
 					dinoList.getItems().add(dino);
 				}
 				dinoLabel.setText(dinoLabel.getText() + " " + Main.jurassicPark.getParkMap().get(parkZone).size());
-				riskLabel.setText(riskLabel.getText() + parkZone.getThreatLevel() + " " + "risk");
+				riskLabelText.setText(parkZone.getThreatLevel() + " risk");
+				switch(parkZone.getThreatLevel()) {
+				case "low":
+					riskLabelText.setTextFill(Color.GREEN);
+					break;
+				case "high":
+					riskLabelText.setTextFill(Color.RED);
+					break;
+				case "medium":
+					riskLabelText.setTextFill(Color.ORANGE);
+					break;
+				case "critical":
+					riskLabelText.setTextFill(Color.DARKRED);
+					break;
+				default:
+					break;
+				}
 			}
 		}
-
-		System.out.println(MainController.zoneCode);
 	}
 }

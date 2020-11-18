@@ -95,6 +95,10 @@ public class Park {
 		return parkMap;
 	}
 	
+	public void setParkMap(HashMap<Zone, ArrayList<Dinosaur>> parkMap) {
+		this.parkMap = parkMap;
+	}
+	
 	public String toString() {
 		for(Zone z : parkMap.keySet()) {
 			System.out.println(z.getZoneName() + " - " + z.getZoneCode() + " (" + z.getThreatLevel() + " risk)");
