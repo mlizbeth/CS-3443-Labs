@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+	//Not thread safe
 	public static Park jurassicPark = new Park("Jurassic Park");
 	
 	public static void main(String[] args) {
@@ -27,7 +28,6 @@ public class Main extends Application {
 		primaryStage.setTitle("Jurassic Park Viewer");
 		primaryStage.getIcons().add(new Image("file:img/logo.png"));
 		primaryStage.show();
-		
 		
 		/* Turns out these had unintended consequences since initialization happens before
 		 * any sort of buttons are clicked

@@ -20,6 +20,10 @@ import javafx.stage.Stage;
 
 public class ZoneController implements EventHandler<ActionEvent> {
 	
+	//TODO
+	//Add/Relocate buttons
+	//Error handling/notifications in GUI
+	
 	private Scene mainScene;
 	private Stage primaryStage;
 	
@@ -37,6 +41,16 @@ public class ZoneController implements EventHandler<ActionEvent> {
 		if(event.getSource().equals(homeButton)) {
 			primaryStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 			primaryStage.setScene(mainScene);
+		}
+		
+		if(event.getSource().equals(addButton)) {
+			//TODO
+			System.out.println("Add");
+		}
+		
+		if(event.getSource().equals(relocateButton)) {
+			//TODO
+			System.out.println("Relocate");
 		}
 	}
 	

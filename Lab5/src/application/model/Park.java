@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class Park {
 	
@@ -23,8 +24,33 @@ public class Park {
 		loadZones();
 	}
 	
-	public void relocate(String zoneCode, String dinoName) {
+	public void relocate(String currentZoneCode, String newZoneCode, String dinoName) {
+		Dinosaur dinoToRelocate = null;
 		
+		for(Zone zone : parkMap.keySet()) {
+			if(zone.getZoneCode().equals(currentZoneCode)) {
+				ArrayList<Dinosaur> dinosInZone = parkMap.get(zone);
+				for(Iterator<Dinosaur> dinoIterator = dinosInZone.iterator(); dinoIterator.hasNext();) {
+					Dinosaur dino = dinoIterator.next();
+					if(dino.getName().equals(dinoName)) {
+						dinoToRelocate = dino;
+						dinoIterator.remove();
+						dinosInZone.remove(dino);
+						parkMap.put(zone, dinosInZone);
+					}
+				}
+			}
+		}
+		
+		if(dinoToRelocate != null) {
+			for(Zone zone : parkMap.keySet()) {
+				if(zone.getZoneCode().equals(newZoneCode)) {
+					ArrayList<Dinosaur> dinosInZone = parkMap.get(zone);
+					dinosInZone.add(dinoToRelocate);
+					parkMap.put(zone, dinosInZone);
+				}
+			}
+		}
 	}
 	
 	public void save() {
