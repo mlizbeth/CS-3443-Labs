@@ -24,6 +24,15 @@ public class Park {
 		loadZones();
 	}
 	
+	public void addDinosaur(Dinosaur dino, String zoneCode) {
+		for(Zone zone : parkMap.keySet()) {
+			if(zone.getZoneCode().equals(zoneCode)) {
+				ArrayList<Dinosaur> dinosInZone = parkMap.get(zone);
+				dinosInZone.add(dino);
+			}
+		}
+	}
+	
 	public void relocate(String currentZoneCode, String newZoneCode, String dinoName) {
 		Dinosaur dinoToRelocate = null;
 		
@@ -134,5 +143,4 @@ public class Park {
 		}
 		return "";
 	}
-
 }
