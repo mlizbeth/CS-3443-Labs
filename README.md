@@ -22,7 +22,7 @@ Improve Lab 3 by making a ship viewer for the captains to see their crew [PDF cr
 Final grade: 110/90
 
 ## Lab 5
-Basically the same as Lab 4 but Jurassic Park theme, need to be able to move Dinosaurs to a new zone/add them to the zone
+Basically the same as Lab 4 but Jurassic Park theme, need to be able to move Dinosaurs to a new zone/add them to the zone [PDF criteria](https://github.com/mlizbeth/CS-3443-Labs/blob/master/Lab5/Lab%205.pdf)
 
 bugs: Can only add one dinosaur to a zone without navigating home and back, can move dinosaurs to invalid zones, and non existent dinosaurs can be moved to valid zones
 
